@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("./animation.css");
+:root{
+    --mainClr: #fff;
+    --secondClr: #0ef;
+    --bgClr:#1f242d;
+    --mainFF:'Poppins', serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--bgClr);
+}
+.header{
+    position: fixed;
+    z-index: 100;
+    background-color: var(--bgClr);
+    box-shadow: 0 10px 10px var(--bgClr);
+    padding: 5px 10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+}
+.header a{
+    text-decoration: none;
+    color: var(--mainClr);
+}
+.logo{
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: default;
+    animation: slideToRight ease-out 0.5s;
+}
+
+.navbar{
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a{
+    font-size: 24px;
+    transform: .3s;
+    opacity: 0;
+    animation: slideToBottom ease-out .5s;
+    animation-delay: var(--t);
+    animation-fill-mode: forwards;
+}
+.navbar a:hover, .navbar .active {
+    color:var(--secondClr)
+}
+
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    padding: 0px 10%;
+}
+section:nth-of-type(even){
+    background-color: var(--bgSecondClr);
+}
+
+section.main_content h1{
+    opacity: 0;
+    animation: slideToRight linear .5s ;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+section.main_content h3{
+    opacity: 0;
+    animation: slideToLeft linear .5s ;
+    animation-fill-mode: forwards;
+}
+section.main_content h3:first-of-type{
+    animation-delay: .3s;
+}
+section.main_content h3:last-of-type{
+    animation-delay: .7s;
+}
+section.main_content p{
+    opacity: 0;
+    animation: slideToTop linear .7s ;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+section.main_content .social,
+section.main_content .photo_wrapper,
+section.main_content .btn{
+    opacity: 0;
+    animation: Scale linear .5s ;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+}
+section.main_content .photo_wrapper{
+    animation-duration: 1s;
+    animation-delay: 1.8s;
+}
+section.main_content .btn{
+    animation-duration: .3s;
+    animation-delay: 1.6s;
+}
+
+section h1, section h3, section p{
+    color: var(--mainClr);
+}
+section h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+section p{
+    font-size: 18px;section
+}
+section span{
+    color: var(--secondClr);
+    font-weight: 600;
+}
+section h3{
+    font-size: 36px;
+    font-weight: 600;
+}
+section h3:last-of-type{
+    margin-bottom: 30px;
+}
+
+.photo_wrapper{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--secondClr);
+    box-shadow: 20px 20px 20px var(--secondClr);
+}
+.photo{
+    width: 400px;
+    height: 500px;
+    background-image: url(./ненорм.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    top: -100px;
+}
+
+.social a{
+    color: var(--secondClr);
+    border: 2px solid var(--secondClr);
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.social a:hover{
+    background-color:  var(--secondClr);
+    color: var(--bgClr);
+    box-shadow: 0 0 5px var(--secondClr)
+}
+.social{
+    margin-bottom: 20px;
+}
+.bth{
+    padding: 15px 25px;
+    color: var(--bgClr);
+    text-decoration: none;
+    background-color: var(--secondClr);
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 0 5px var(--secondClr);
+    display: inline-flex;
+}
+.bth:hover{
+    box-shadow: 0 0 10px var(--secondClr);
+}
+html{
+    scroll-behavior: smooth;
+    align-items: center;
+}
+.services{
+    flex-direction: column;
+    gap: 50px;
+}
+.services_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+
+}
+.services_elem{
+    flex: 1 1 30%;
+    padding: 25px 15px;
+    max-width: 300px;
+    background-color: var(--bgSecondClr);
+    border-radius: 10px;
+    transition: .3s;
+    text-align: center;
+}
+.services_elem:hover{
+    scale: 1.01;
+    box-shadow: 0 0 5px var(--secondClr);
+}
+.services_elem i{
+    font-size: 36px;
+    color: var(--secondClr);
+}
+.portfolio{
+    flex-direction: column;
+    gap: 50px;
+}
+.portfolio_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+}
+.portfolio_elem{
+    width: 300px;
+    height: 200px;
+    
+    border-radius: 5px;
+    background-color: #555;
+    overflow: hidden;
+}
+.desc h5{
+    color: var(--secondClr);
+    font-size: 24px;
+}
+.desc p{
+    font-size: 20px;
+}
+.desc a{
+    color: var(--mainClr);
+    font-size: 24px;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.desc{
+    position: relative;
+    top: 100%;
+    text-align: center;
+    padding-top: 15px;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), var(--secondClr));
+    transition: .3s;
+}
+.portfolio_elem:hover .desc{
+    top: 0;
+}
+
+
+.contact{
+    flex-direction: column;
+    gap: 20px;
+}
+form{
+    display: grid;
+    grid-template-areas: 
+    "A A B B"
+    "C C C C"
+    "T T T D";
+    gap: 10px;
+}
+form .input_block:nth-child(1){
+    grid-area: A;
+}
+form .input_block:nth-child(2){
+    grid-area: B;
+}
+form input{
+    width: 100%;
+    padding: 20px;
+}
+form textarea{
+    resize: none;
+    grid-area: C;
+    height: 300px;
+    padding: 20px;
+}
+form *{
+    outline: none;
+}
+form input[type="submit"]{
+    border: none;
+    grid-area: D;
+}
